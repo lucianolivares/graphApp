@@ -1,7 +1,7 @@
 from kivymd.uix.screen import MDScreen
 import matplotlib.pyplot as plt
 import numpy as np
-from backend_kivyagg import FigureCanvas, NavigationToolbar2Kivy, FigureCanvasKivyAgg
+from backend_kivyagg import FigureCanvasKivyAgg
 
 class MainScreenView(MDScreen):
     def gnrt_graph(self):
