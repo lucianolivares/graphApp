@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = KitchenSink
+title = TestingProject
 
 # (str) Package name
-package.name = kitchensink
+package.name = matplotkivy
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.kivymd
@@ -13,13 +13,13 @@ package.domain = org.kivymd
 source.dir = .
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*
+# source.include_patterns = assets/*
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/assets/images/presplash.png
+# presplash.filename = %(source.dir)s/assets/images/presplash.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/assets/images/logo.png
+#icon.filename = %(source.dir)s/assets/images/logo.png
 
 # (string) Presplash background color (for new android toolchain)
 android.presplash_color = #000000
@@ -38,8 +38,9 @@ version = 0.0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 requirements = python3, \
-               kivy==2.1.0, \
-               https://github.com/kivymd/KivyMD/archive/master.zip
+               kivy, \
+               matplotlib, \
+               kivymd
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
 
@@ -59,7 +60,7 @@ android.skip_update = False
 # the default, you will be shown the license when first running
 # buildozer.
 android.accept_sdk_license = True
-
+android.logcat_filters = *:S python:D
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 android.archs = armeabi-v7a
 

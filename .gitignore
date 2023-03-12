@@ -1,2 +1,5 @@
 /__pycache__
 /venv
+/.buildozer
+/bin
+.DS_Store
