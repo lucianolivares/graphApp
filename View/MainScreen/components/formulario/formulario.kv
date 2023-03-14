@@ -1,0 +1,89 @@
+<Formulario>:
+    cols: 1
+    padding: [100,20,100,60]
+    spacing: 10
+    row_default_height: 50
+    adaptive_height: True
+
+                                            
+    MDTextFieldRect:
+        id: fr 
+        multiline: False
+        text:"7.0"
+        hint_text: "Factor Roca:"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+                                                                                    
+    MDTextFieldRect:
+        id: b
+        multiline: False
+        text: "3.0"
+        hint_text: "Burden(m):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: s    
+        multiline: False
+        text: "4.0"
+        hint_text: "Espaciamiento(m):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: h
+        multiline: False
+        text: "11"
+        hint_text: "Altura Banco(m):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: Desv
+        multiline: False
+        text: "0.02"    
+        hint_text: "Desv.Perf.(m):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: t
+        multiline: False
+        text:"2.8"
+        hint_text: "Taco(m):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: d    
+        multiline: False
+        text:"100"
+        hint_text: "Diámetro(mm)"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: sp
+        multiline: False
+        text:"0"
+        hint_text: "Sobre perf.(m):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: de    
+        multiline: False
+        text:"0.82"
+        hint_text: "Densidad Exp(g/cc):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+    MDTextFieldRect:
+        id: rws
+        hint_text: "RWS(%):"
+        pos_hint: {"center_x":0.5}
+        font_size: dp(15)
+        multiline: False
+        text:"100"
+                                                        
+    MDBoxLayout:
+        orientation:"horizontal"
+        spacing:10
+        MDRaisedButton:
+            text: "Graficar"
+            on_release: 
+                root.gnrt_graph()
+        MDRaisedButton:
+            text: "Limpiar"

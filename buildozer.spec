@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = TestingProject
+title = PlotKivy
 
 # (str) Package name
-package.name = matplotkivy
+package.name = plotKivy
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.kivymd
+package.domain = org.ds
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -22,10 +22,10 @@ source.dir = .
 #icon.filename = %(source.dir)s/assets/images/logo.png
 
 # (string) Presplash background color (for new android toolchain)
-android.presplash_color = #000000
+android.presplash_color = #7EA8FC
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py, gif, png, jpg, jpeg, ttf, kv, json, txt, md
+source.include_exts = py, gif, png, jpg, jpeg kv, json, txt, md
 
 # (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
 # contains an 'androidx' package, or any package from Kotlin source.
@@ -39,6 +39,7 @@ version = 0.0.1
 # comma separated e.g. requirements = sqlite3,kivy
 requirements = python3, \
                kivy, \
+               kivy.garden.graph, \
                kivymd
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
@@ -61,8 +62,14 @@ android.skip_update = False
 android.accept_sdk_license = True
 android.logcat_filters = *:S python:D
 
+android.add_libs_armeabi = libs/android/.so
+android.add_libs_armeabi_v7a = libs/android-v7/.so
+android.add_libs_arm64_v8a = libs/android-v8/.so
+android.add_libs_x86 = libs/android-x86/.so
+android.add_libs_mips = libs/android-mips/*.so
+
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.archs =  armeabi-v7a
+android.archs =  armeabi-v7a, arm64-v8a, x86_64
 
 # (bool) enables Android auto backup feature (Android API >=23)
 android.allow_backup = True
@@ -70,7 +77,7 @@ android.allow_backup = True
 android.release_artifact = apk
 
 # (str) python-for-android branch to use, defaults to master
-# p4a.branch = develop
+# p4a.branch = master
 
 [buildozer]
 
