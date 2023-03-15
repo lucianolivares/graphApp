@@ -33,11 +33,11 @@ source.include_exts = py, gif, png, jpg, jpeg, ttf, kv, json, txt, md
 # android.enable_androidx = True
 
 # (str) Application versioning (method 2)
-version = 0.0.1
+version = 0.1.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3, numpy, kivy.garden.graph, kivy==master, https://github.com/kivymd/KivyMD/archive/master.zip
+requirements = python3, numpy, matplotlib, kivy.garden.graph, kivy==master, https://github.com/kivymd/KivyMD/archive/master.zip
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
