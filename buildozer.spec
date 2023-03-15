@@ -37,7 +37,7 @@ version = 0.0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3, kivy==master, https://github.com/kivymd/KivyMD/archive/master.zip
+requirements = python3, numpy, kivy.garden.graph, kivy==master, https://github.com/kivymd/KivyMD/archive/master.zip
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
@@ -47,6 +47,7 @@ fullscreen = 0
 
 # (int) Target Android API, should be as high as possible.
 # android.api = 31
+android.logcat_filters = *:S python:D
 
 # (bool) If True, then skip trying to update the Android sdk
 # This can be useful to avoid excess Internet downloads or save time
