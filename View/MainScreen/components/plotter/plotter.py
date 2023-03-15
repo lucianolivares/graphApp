@@ -1,30 +1,37 @@
 from kivymd.uix.boxlayout import MDBoxLayout
 # from kivy_garden.graph import Graph, LinePlot, PointPlot
+import matplotlib.pyplot as plt
 import numpy as np
+from utils.backend_kivyagg import FigureCanvasKivyAgg
 
 
 class Plotter(MDBoxLayout):
     def __init__(self, **kwargs):
         super(Plotter, self).__init__(**kwargs)
         self.samples = 19
-        # self.graph = Graph(
-        #     xmin=0.0, xmax=0.6, ymin=0, ymax=100,
-        #     border_color=[0, 0, 0, 1],
-        #     tick_color=[0, 0, 0, 0.2],
-        #     x_grid_label=True, y_grid_label=True,
-        #     x_grid=True, y_grid=True,
-        #     x_ticks_major=0.1, y_ticks_major=16.6,
-        #     xlabel='Tamaño', ylabel='Retención',
-        # )
-        # self.add_widget(self.graph)
-        # self.plot = LinePlot(color=[0, 0, 1, 1], line_width=2)
-        # self.ver_line = PointPlot(color=[1, 0, 0, 0.8], point_size=2)
-        # self.hor_line = PointPlot(color=[1, 0, 0, 0.8], point_size=2)
-        # self.graph.add_plot(self.plot)
-        # self.graph.add_plot(self.ver_line)
-        # self.graph.add_plot(self.hor_line)
+        self.fig, self.ax = plt.subplots()
+        self.draw_plot()
 
-    # def update(self, plot_x, plot_y, x_80):
+
+        
+    def draw_plot(self):
+        self.clear_widgets()
+        self.ax.set_title('Predicción Fragmentación', fontsize=15)
+        self.ax.set_xlabel('Tamaño frag.(m)', fontsize=10)
+        self.ax.set_ylabel('Retención (%)', fontsize=7)
+        self.ax.grid(True, color='lightgray')
+        self.ax.axhline(y=80, color="r", ls="--")
+        canvas = FigureCanvasKivyAgg(figure=self.fig)
+        self.add_widget(canvas)
+        
+
+    def update(self, plot_x, plot_y, x_80):
+        self.ax.cla()
+        self.ax.axvline(x=x_80, color="r", ls="--")
+        self.ax.plot(plot_x, plot_y*100, label='Valores')
+        self.draw_plot()
+        # self.clear_widgets()
+        # return self.add_widget(FigureCanvasKivyAgg(plt.gcf()))
     #     self.plot.points = [(plot_x[x], plot_y[x]*100)
     #                         for x in range(self.samples)]
     #     self.ver_line.points = [
