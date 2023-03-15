@@ -1,0 +1,89 @@
+<CustomTextField@MDTextField>:
+    multiline: False
+    mode: 'fill'
+
+<Formulario>:
+    spacing: dp(12)
+    default_size: None, dp(200)
+    default_size_hint: 1, None
+    size_hint_y: None
+    height: self.minimum_height
+    orientation: 'vertical'
+
+    MDLabel:
+        text: 'Formulario'
+        font_style: 'H2'
+        halign: 'center'
+        size_hint: 1, None
+        height: "75dp"
+        font_name: 'Poppins'
+
+    CustomTextField:
+        id: fr 
+        hint_text: "Factor Roca:"
+        text:"7.0"
+                                                                                    
+    CustomTextField:
+        id: b
+        hint_text: "Burden(m):"
+        text: "3.0"
+
+    CustomTextField:
+        id: s    
+        hint_text: "Espaciamiento(m):"
+        text: "4.0"
+
+    CustomTextField:
+        id: h
+        hint_text: "Altura Banco(m):"
+        text: "11"
+
+    CustomTextField:
+        id: Desv
+        hint_text: "Desv.Perf.(m):"
+        text: "0.02"    
+
+    CustomTextField:
+        id: t
+        text:"2.8"
+        hint_text: "Taco(m):"
+
+    CustomTextField:
+        id: d    
+        hint_text: "Diámetro(mm)"
+        text:"100"
+
+    CustomTextField:
+        id: sp
+        hint_text: "Sobre perf.(m):"
+        text:"0"
+
+    CustomTextField:
+        id: de    
+        hint_text: "Densidad Exp(g/cc):"
+        text:"0.82"
+
+    CustomTextField:
+        id: rws
+        hint_text: "RWS(%):"
+        text:"100"
+                                                        
+    MDBoxLayout:
+        orientation:"horizontal"
+        size_hint: 1, None
+        height: "50dp"
+        spacing: dp(12)
+
+        MDRaisedButton:
+            text: "Graficar"
+            size_hint: 2, 1
+            font_name: 'Poppins'
+            on_release: 
+                root.gnrt_graph()
+
+        MDRaisedButton:
+            text: "Limpiar"
+            size_hint: 1, 1
+            font_name: 'Poppins'
+            text_color: 0, 0, 0, 1
+            md_bg_color: app.theme_cls.accent_color
