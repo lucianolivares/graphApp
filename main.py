@@ -33,7 +33,7 @@ DEBUG=1 python main.py
 
 # from View.screens import screens
 
-# class TestingProject(MDApp):
+# class GraphApp(MDApp):
 #     KV_DIRS = [os.path.join(os.getcwd(), "View")]
 
 #     def build_app(self) -> MDScreenManager:
@@ -48,7 +48,7 @@ DEBUG=1 python main.py
 #             view = eval(
 #                 f'View.{screens[name_screen]}.{screens[name_screen].split(".")[0]}View()'
 #             )
-#             view.name = "main"
+#             view.name = name_screen
 #             self.manager_screens.add_widget(view)
             
 #         self.manager_screens.current = "main"
@@ -67,7 +67,7 @@ DEBUG=1 python main.py
 #             self.rebuild()
 
 
-# TestingProject().run()
+# GraphApp().run()
 
 # After you finish the project, remove the above code and uncomment the below
 # code to test the application normally without hot reloading.
@@ -91,7 +91,7 @@ from kivymd.uix.screenmanager import MDScreenManager
 from View.screens import screens
 
 
-class TestingProject(MDApp):
+class GraphApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.load_all_kv_files(self.directory)
@@ -118,10 +118,10 @@ class TestingProject(MDApp):
             view = eval(
                 f'View.{screens[name_screen]}.{screens[name_screen].split(".")[0]}View()'
             )
-            view.name = "main"
+            view.name = name_screen
             self.manager_screens.add_widget(view)
             
         self.manager_screens.current = "main"
 
 
-TestingProject().run()
+GraphApp().run()

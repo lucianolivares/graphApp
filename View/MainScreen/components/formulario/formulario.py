@@ -1,10 +1,9 @@
-from ..plotter import Plotter  # NOQA
 from kivymd.uix.gridlayout import MDGridLayout
-
 import numpy as np
+from kivymd.app import MDApp
+
 
 class Formulario(MDGridLayout):
-    plot = Plotter()
     def gnrt_graph(self):
         fr = float(self.ids.fr.text)
         b = float(self.ids.b.text)
@@ -16,7 +15,7 @@ class Formulario(MDGridLayout):
         sp = float(self.ids.sp.text)
         de = float(self.ids.de.text)
         rws = float(self.ids.rws.text)
-        
+
         lc = h+sp - t
         w = de * lc * 3.1416*d**2/2
         V = b*s*h
@@ -29,8 +28,8 @@ class Formulario(MDGridLayout):
 
         X = Xc * ((- (np.log(1-p)))**(1/n))
         X80 = Xc * ((- (np.log(0.2)))**(1/n))
-        self.plot.update(X, p, X80)
 
-        if not self.plot in self.parent.children:
-            self.parent.add_widget(self.plot)
+        main_screen = MDApp.get_running_app().manager_screens.get_screen('main')
+        plotter = main_screen.ids.plotter
 
+        plotter.update(X, p, X80)

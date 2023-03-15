@@ -1,13 +1,11 @@
-
-#: import SwapTransition kivy.uix.screenmanager.SwapTransition
-
 <MainScreenView>:
     ScrollView:
         MDGridLayout:
-            cols: 1  
+            cols: 1
             adaptive_height: True
             padding: 20
+            id: grid_layout
             Formulario:
                 id: formulario
-
-
+            Plotter:
+                id: plotter
