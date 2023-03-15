@@ -1,3 +1,5 @@
 screens = {
-  'main': 'MainScreen.main_screen'
+  'menu': 'MenuScreen.menu_screen',
+  'main': 'MainScreen.main_screen',
+  'second': 'SecondScreen.second_screen',
 }
