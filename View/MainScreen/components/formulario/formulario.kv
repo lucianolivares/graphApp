@@ -2,17 +2,21 @@
     multiline: False
     mode: 'fill'
 
-
 <Formulario>:
-    cols: 1
-    spacing: 10
-    row_default_height: 50
-    adaptive_height: True
+    spacing: dp(12)
+    default_size: None, dp(200)
+    default_size_hint: 1, None
+    size_hint_y: None
+    height: self.minimum_height
+    orientation: 'vertical'
 
     MDLabel:
         text: 'Formulario'
         font_style: 'H2'
         halign: 'center'
+        size_hint: 1, None
+        height: "75dp"
+        font_name: 'Poppins'
 
     CustomTextField:
         id: fr 
@@ -66,18 +70,20 @@
                                                         
     MDBoxLayout:
         orientation:"horizontal"
-        spacing:10
-        padding: [5, 5]
-
+        size_hint: 1, None
+        height: "50dp"
+        spacing: dp(12)
 
         MDRaisedButton:
             text: "Graficar"
             size_hint: 2, 1
+            font_name: 'Poppins'
             on_release: 
                 root.gnrt_graph()
 
         MDRaisedButton:
+            text: "Limpiar"
             size_hint: 1, 1
+            font_name: 'Poppins'
             text_color: 0, 0, 0, 1
             md_bg_color: app.theme_cls.accent_color
-            text: "Limpiar"

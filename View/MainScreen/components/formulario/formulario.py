@@ -1,9 +1,9 @@
-from kivymd.uix.gridlayout import MDGridLayout
+from kivymd.uix.boxlayout import MDBoxLayout
 import numpy as np
 from kivymd.app import MDApp
 
 
-class Formulario(MDGridLayout):
+class Formulario(MDBoxLayout):
     def gnrt_graph(self):
         fr = float(self.ids.fr.text)
         b = float(self.ids.b.text)
