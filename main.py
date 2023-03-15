@@ -91,6 +91,7 @@ https://en.wikipedia.org/wiki/Model–view–controller
 
 # from kivymd.app import MDApp
 # from kivymd.uix.screenmanager import MDScreenManager
+# from kivy.core.text import LabelBase
 
 # from View.screens import screens
 
@@ -126,6 +127,9 @@ https://en.wikipedia.org/wiki/Model–view–controller
 #             self.manager_screens.add_widget(view)
             
 #         self.manager_screens.current = "main"
+
+# LabelBase.register(name='Poppins',
+#                    fn_regular='assets/fonts/Poppins-Medium.ttf')
 
 
 # GraphApp().run()
