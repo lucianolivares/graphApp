@@ -36,14 +36,15 @@ DEBUG=1 python main.py
 
 # class GraphApp(MDApp):
 #     KV_DIRS = [os.path.join(os.getcwd(), "View")]
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.theme_cls.material_style = "M3"
+#         self.theme_cls.primary_palette = "Indigo"
 
 #     def build_app(self) -> MDScreenManager:
-#         """
-#         In this method, you don't need to change anything other than the
-#         application theme.
-#         """
-#         self.manager_screens = MDScreenManager()
+#         # self.load_all_kv_files(self.directory)
 #         Window.bind(on_key_down=self.on_keyboard_down)
+#         self.manager_screens = MDScreenManager()
 #         for name_screen in screens:
 #             exec(f"import View.{screens[name_screen]}")
 #             view = eval(
@@ -52,7 +53,7 @@ DEBUG=1 python main.py
 #             view.name = name_screen
 #             self.manager_screens.add_widget(view)
             
-#         self.manager_screens.current = "main"
+#         self.manager_screens.current = "menu"
         
 #         return self.manager_screens
 
@@ -126,7 +127,7 @@ class GraphApp(MDApp):
             view.name = name_screen
             self.manager_screens.add_widget(view)
             
-        self.manager_screens.current = "main"
+        self.manager_screens.current = "menu"
 
 LabelBase.register(name='Poppins',
                    fn_regular='assets/fonts/Poppins-Medium.ttf')
