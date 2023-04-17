@@ -1,16 +1,18 @@
 <MenuCard>:
     size_hint: 1, None
-    height: "200dp"
+    height: dp(200)
     radius: 12
     ripple_behavior: True
 
     RelativeLayout:
-
+        FitImage:
+            source: root.image
+            size_hint_y: 0.6
+            radius: [0, 0, 12, 12]
         MDLabel:
             text: root.title
             bold: True
-            adaptive_height: True
             font_style: "H5"
             halign: "left"
             padding_x: "24dp"
-            pos_hint: {"center_y": .65}
+            pos_hint: {"center_y": 0.8}

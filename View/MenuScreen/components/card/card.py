@@ -3,4 +3,5 @@ from kivy.properties import StringProperty
 
 
 class MenuCard(MDCard):
+    image = StringProperty()
     title = StringProperty()
