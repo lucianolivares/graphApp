@@ -1,16 +1,18 @@
 <MainScreenView>:
-    ScrollView:
-        MDGridLayout:
-            cols: 1
-            adaptive_height: True
-            id: grid_layout
-            MDTopAppBar:
-                id: toolbar
-                title: "Predicción de Fragmentación"
-                left_action_items: [["chevron-left", lambda x: root.back_to_menu()]]
-                elevation: 0
-            Formulario:
-                id: formulario
+    MDGridLayout:
+        cols: 1
+        MDTopAppBar:
+            id: toolbar
+            title: "Predicción de Fragmentación"
+            left_action_items: [["chevron-left", lambda x: root.back_to_menu()]]
+            elevation: 0
+        ScrollView:
+            MDGridLayout:
+                cols: 1
+                adaptive_height: True
+                id: grid_layout
+                Formulario:
+                    id: formulario
 
-            Plotter:
-                id: plotter
+                Plotter:
+                    id: plotter
