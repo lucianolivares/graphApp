@@ -5,6 +5,10 @@ from kivymd.app import MDApp
 
 class Formulario(MDBoxLayout):
     def gnrt_graph(self):
+        for widget in self.children:
+            if not widget.children:
+                if not widget.text:
+                    return
         fr = float(self.ids.fr.text)
         b = float(self.ids.b.text)
         s = float(self.ids.s.text)
@@ -33,3 +37,9 @@ class Formulario(MDBoxLayout):
         plotter = main_screen.ids.plotter
 
         plotter.update(X, p, X80)
+
+    def clean_inputs(self):
+        for widget in self.children:
+            if not widget.children:
+                widget.text = ''
+        
