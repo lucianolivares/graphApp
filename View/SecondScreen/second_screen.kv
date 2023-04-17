@@ -1,11 +1,17 @@
 <SecondScreenView>:
-    ScrollView:
-        MDGridLayout:
-            cols: 1
-            adaptive_height: True
-            id: grid_layout
-            MDTopAppBar:
-                id: toolbar
-                title: "Segunda pantalla"
-                left_action_items: [["chevron-left", lambda x: root.back_to_menu()]]
-                elevation: 0
+    MDGridLayout:
+        cols: 1
+        MDTopAppBar:
+            id: toolbar
+            title: "Gráfico de Frecuencía"
+            left_action_items: [["chevron-left", lambda x: root.back_to_menu()]]
+            elevation: 0
+        MDBoxLayout:
+            orientation: 'vertical'
+            id: box
+            padding: dp(10)
+            MDBoxLayout:
+                id: plotter
+                height: dp(200)
+
+        
